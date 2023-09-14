@@ -10,7 +10,7 @@ function create_host {
 
 	sudo sed -i '1i'$NGINX_IP' arosado-.42.fr' /etc/hosts
 	sudo sed -i '1i'$NGINX_IP' www.arosado-.42.fr' /etc/hosts
-	sudo sed -i '1i'$NGINX_IP' https://wwww.arosado-.42.fr' /etc/hosts
+	sudo sed -i '1i'$NGINX_IP' https://www.arosado-.42.fr' /etc/hosts
 	sudo sed -i '1i # Inception setup ... arosado-.42.fr ' /etc/hosts
 }
 
