@@ -13,17 +13,7 @@ RUN apt-get install php7.3-cli php7.3-fpm php7.3-mysql php7.3-json php7.3-opcach
 RUN ln -sf /usr/share/zoneinfo/Europe/Lisbon /etc/localtime
 
 COPY /tools/ /tmp/
-
-RUN mkdir /var/www
-RUN mkdir /var/www/html
-WORKDIR /var/www/html
-RUN wget https://wordpress.org/latest.tar.gz
-RUN tar -xvzf latest.tar.gz
-RUN rm latest.tar.gz
-WORKDIR /var/www/html/wordpress
 COPY /conf/ /tmp/
-RUN chown -R www-data:www-data /var/www/html/wordpress
-
 COPY /conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
 # Wordpress Instalation

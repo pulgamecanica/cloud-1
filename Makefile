@@ -9,6 +9,7 @@ $(NAME): up
 all: $(NAME)
 
 up:
+	mkdir -p /home/$(USER)/data
 	docker compose -f srcs/docker-compose.yml up --build -d
 	bash srcs/requirements/tools/hosts.sh create
 

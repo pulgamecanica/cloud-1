@@ -14,10 +14,13 @@ set -x
 #WP_USER_EMAIL=arosado@student.pt
 #WP_USER_PASS=pass123
 
-while [ ! -e /var/www/html/wordpress/ ]
-do
-	sleep 1;
-done
+mkdir -p /var/www
+mkdir -p /var/www/html
+cd /var/www/html
+wget https://wordpress.org/latest.tar.gz
+tar -xvzf latest.tar.gz
+rm latest.tar.gz
+chown -R www-data:www-data /var/www/html/wordpress
 
 sleep 5;
 
