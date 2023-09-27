@@ -45,6 +45,8 @@ We decided to use ansible to deploy our Wordpress Site.
 
 ## EC2 Amazon
 
+#### EC2
+
 - Login in your AWS account
 - Create a new Ec2 instance (I used all the defaults for ubuntu)
 - Setup the security context, open ports 22 and 444 for HTTP/S requests
@@ -58,10 +60,15 @@ We decided to use ansible to deploy our Wordpress Site.
 - docker ps (make sure the docker containers are running properly)
 - Visit your EC2 IP
 
+#### Route53
+
+- Obtain your Domain Name (DN)
+- Setup the Hosted Zone -> Add a DNS Record to the Hosted Zone (type A for IPv4), input the EC2 IP
+- Visit the DN make sure the redirection is done correctly
+
 ***
 
 #### EC2 Docker installation
-
 
 ```sh
 sudo apt-get update
