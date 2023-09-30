@@ -11,7 +11,7 @@ RUN mkdir -p /etc/nginx/ssl
 RUN openssl req -new -x509 -days 365 -nodes \
 -out /etc/nginx/ssl/arosado-.pem \
 -keyout /etc/nginx/ssl/arosado-.key \
--subj "/C=PO/ST=Lisbon/L=Lisbon/O=42Lisboa/OU=42Lisboa-/CN=arosado-.42.fr/"
+-subj "/C=PO/ST=Lisbon/L=Lisbon/O=42Lisboa/OU=42Lisboa-/CN=pulgamecanica42.com/"
 RUN chmod 600 /etc/nginx/ssl/arosado-*
 
 COPY /tools/ /tmp/

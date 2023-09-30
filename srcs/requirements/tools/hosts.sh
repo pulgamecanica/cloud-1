@@ -1,17 +1,17 @@
 #!/bin/bash
 
 function delete_host {
-	sudo sed -i '/42.fr/d' /etc/hosts
+	sudo sed -i '.com/d' /etc/hosts
 }
 
 function create_host {
 	delete_host
 	NGINX_IP=`docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' nginx`
-
-	sudo sed -i '1i'$NGINX_IP' arosado-.42.fr' /etc/hosts
-	sudo sed -i '1i'$NGINX_IP' www.arosado-.42.fr' /etc/hosts
-	sudo sed -i '1i'$NGINX_IP' https://www.arosado-.42.fr' /etc/hosts
-	sudo sed -i '1i # Inception setup ... arosado-.42.fr ' /etc/hosts
+	
+	sudo sed -i '1i'$NGINX_IP' pulgamecanica42.com' /etc/hosts
+	sudo sed -i '1i'$NGINX_IP' www.pulgamecanica42.com' /etc/hosts
+	sudo sed -i '1i'$NGINX_IP' https://www.pulgamecanica42.com' /etc/hosts
+	sudo sed -i '1i # Inception setup ... cloud-1 ' /etc/hosts
 }
 
 
